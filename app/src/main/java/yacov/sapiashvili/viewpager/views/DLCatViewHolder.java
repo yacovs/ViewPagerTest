@@ -74,7 +74,7 @@ public class DLCatViewHolder extends RecyclerView.ViewHolder {
                     int midDelta = ((lastVisibleItemPosition - firstVisibleItemPosition)/2)+1;
                     int midPosition = lastVisibleItemPosition -midDelta;
                     if(firstVisibleItemPosition==0){
-                        smoothScroller.scrollToPositionWithOffset(firstVisibleItemPosition,0);
+                        smoothScroller.scrollToPositionWithOffset(firstVisibleItemPosition,20);
                     }
                     else if(midPosition>=firstVisibleItemPosition && midPosition<lastVisibleItemPosition)
                         smoothScroller.scrollToPositionWithOffset(midPosition,120);
@@ -84,11 +84,6 @@ public class DLCatViewHolder extends RecyclerView.ViewHolder {
                     }
                 }
                 super.onScrollStateChanged(recyclerView, newState);
-            }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
             }
         });
         int resId = R.anim.layout_animation_fall_down;

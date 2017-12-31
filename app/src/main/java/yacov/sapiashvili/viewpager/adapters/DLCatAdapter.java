@@ -41,6 +41,9 @@ public class DLCatAdapter extends RecyclerView.Adapter<DLCatViewHolder> {
     }
     @Override
     public int getItemCount() {
+        if(mDlCats==null){
+            return 0;
+        }
         return mDlCats.size();
     }
 

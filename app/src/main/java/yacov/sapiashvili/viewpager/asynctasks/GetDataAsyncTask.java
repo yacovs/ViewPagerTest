@@ -60,11 +60,12 @@ public class GetDataAsyncTask extends AsyncTask<String,Void,String> {
                 mDLObjectList = getDLObjectListFromJSON(mDLObjectJSONList);
                 mDLCatList = getDLCatListFromJSON(mDLCatJSONList);
                 for(int i=0 ; i<mDLCatList.size();i++){
-                    for(int j=0;j<mDLObjectList.size();j++){
-                        if(mDLCatList.get(i).getmCatId()==mDLObjectList.get(j).getmCatId()){
-                            mDLCatList.get(i).getmDLObject().add(mDLObjectList.get(j));
-                        }
-                    }
+//                    for(int j=0;j<mDLObjectList.size();j++){
+//                        if(mDLCatList.get(i).getmCatId()==mDLObjectList.get(j).getmCatId()){
+//                            mDLCatList.get(i).getmDLObject().add(mDLObjectList.get(j));
+//                        }
+//                    }
+                    mDLCatList.get(i).setmDLObject(mDLObjectList);
                 }
                 callback.loadFinish(mDLCatList);
             } catch (JSONException e) {
